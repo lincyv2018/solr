@@ -11,9 +11,9 @@ sudo $(aws ecr get-login --region eu-west-1 --no-include-email)
 TODAY=$(date +%d%m%Y)
 YESTERDAY=$(date --date="yesterday" +%d%m%Y)
     # Production - Daily Classification merge and incremental
-    docker run -p 8983:8983 -e YESTERDAY=$YESTERDAY 376641251557.dkr.ecr.eu-west-1.amazonaws.com/alamy-solr:1.0.22-classification bash -c 'echo $YESTERDAY; cd /opt/solr/import; ./mergeSolrClassificationFiles.sh $YESTERDAY; ./updatesolrremoteclassification.sh $YESTERDAY 172.26.3.31'
+    docker run -p 8983:8983 solr:latest
     # Index Update Status
-	docker run -p 8983:8983 -e YESTERDAY=$YESTERDAY 376641251557.dkr.ecr.eu-west-1.amazonaws.com/alamy-solr:1.2.24 bash -c 'echo $TODAY; cd /opt/solr/import; ./indexUpdateStatus.sh 172.26.3.31 Solr_Classification ; ./indexUpdateStatus.sh 172.26.4.41 Solr_Classification ; ./indexUpdateStatus.sh 172.26.6.107 Solr_Classification ; ./indexUpdateStatus.sh 172.26.6.107 Solr_Classification ;'
+	docker run -p 8983:8983 solr:latest
     # Send completed
-    aws sns publish --topic-arn arn:aws:sns:eu-west-1:376641251557:SolrIndex --message "Solr Classification index updates completed. Temporary instance shutting down"
+    echo  "Solr Classification index updates completed. Temporary instance shutting down" | mail -S "Solr Testing" lincyv@alamy.com
     shutdown -h now
