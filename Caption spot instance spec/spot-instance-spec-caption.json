@@ -18,15 +18,10 @@
   "IamInstanceProfile": {
     "Name": "k8master_access"
   },
-  "TagSpecifications": [
+  "tags": [
     {
-      "ResourceType": "instance",
-      "Tags": [
-        {
-          "Key": "Name",
-          "Value": "Solrsoptinstances"
-        }
-      ]
+      "key" : "Name",
+      "Value": "solrsoptinstances" 
     }
   ],
   "SecurityGroupIds": ["sg-0accdb451a0181711"]
