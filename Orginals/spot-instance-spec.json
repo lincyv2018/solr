@@ -1,7 +1,7 @@
 {
     "ImageId": "IMAGE_ID",
     "KeyName": "solrcloud",
-    "UserData": "$exd",
+    "UserData": "USER_DATA",
     "InstanceType": "INSTANCE_TYPE",
     "Placement": {
       "AvailabilityZone": "AVZONE"
