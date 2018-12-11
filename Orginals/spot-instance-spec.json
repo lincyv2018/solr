@@ -1,0 +1,22 @@
+{
+    "ImageId": "IMAGE_ID",
+    "KeyName": "solrcloud",
+    "UserData": "$exd",
+    "InstanceType": "INSTANCE_TYPE",
+    "Placement": {
+      "AvailabilityZone": "AVZONE"
+    },
+    "BlockDeviceMappings": [
+      {
+        "DeviceName": "/dev/xvda",
+        "Ebs": {
+          "VolumeSize": 30
+        }
+      }
+    ],
+    "SubnetId": "SUB_NET",
+    "IamInstanceProfile": {
+      "Name": "ecsInstanceRole"
+    },
+    "SecurityGroupIds": ["SPOT_SG"]
+  }
