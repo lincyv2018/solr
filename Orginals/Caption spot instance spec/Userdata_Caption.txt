@@ -1,0 +1,22 @@
+#!/bin/bash -xe
+# Set up and start the Solr index update script
+# Last update 2017.07.27 by NH for captions translation improvements
+export AWS_DEFAULT_REGION=eu-west-1
+sudo yum update -y
+sudo yum install -y docker
+sudo usermod -a -G docker ec2-user
+sudo service docker start
+TODAY=$(date +%d%m%Y)
+YESTERDAY=$(date --date="yesterday" +%d%m%Y)
+# Translate daily captions
+docker run -d solr:latest
+# Don't continue if there are captions that remain to be translated
+if [ aws s3 ls s3://lincytest/RemainingCaption_$TODAY.txt | wc -l ]
+then
+    echo  "Captions translate has errors for today ($TODAY). Please do not proceed with Solr index update as RemainingCaption_$TODAY.txt exists. Logs in S3 (s3://lincytest/log.txt)" | mail -S "Solr Test" lincyv@alamy.com
+    shutdown -h now
+else
+    # Send update email
+      echo  "Captions translate has errors for today ($TODAY). Please do not proceed with Solr index update as RemainingCaption_$TODAY.txt exists. Logs in S3 (s3://lincytest/log.txt)" | mail -S "Solr Test" lincyv@alamy.com
+    shutdown -h now
+fi
