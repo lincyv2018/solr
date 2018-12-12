@@ -1,2 +1,2 @@
 # solr
-Lincy Testing the sopt instances 
+Lincy Testing the sopt-instances 
