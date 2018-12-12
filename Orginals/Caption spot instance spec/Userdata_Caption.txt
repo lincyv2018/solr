@@ -11,7 +11,7 @@ sudo $(aws ecr get-login --region eu-west-1 --no-include-email)
 TODAY=$(date +%d%m%Y)
 YESTERDAY=$(date --date="yesterday" +%d%m%Y)
 # Translate daily captions
-docker run -e TODAY=$TODAY DOCKER_IMAGE bash -c 'echo $TODAY; cd /opt/caption_translator; ./caption_translate.sh $TODAY'
+docker run -e TODAY=$TODAY 376641251557.dkr.ecr.eu-west-1.amazonaws.com/alamy-translate:1.0.4 bash -c 'echo $TODAY; cd /opt/caption_translator; ./caption_translate.sh $TODAY'
 # Don't continue if there are captions that remain to be translated
 if [ aws s3 ls s3://alamy-solr-data/Captions/$TODAY/logs/RemainingCaption_$TODAY.txt | wc -l ]
 then
