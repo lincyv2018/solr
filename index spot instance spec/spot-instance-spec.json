@@ -1,8 +1,7 @@
 {
   "ImageId": "ami-db1688a2",
   "KeyName": "lincy-alamy-testaws",
-  "UserData": "IyEvYmluL2Jhc2ggLXhlDQojIFNldCB1cCBhbmQgc3RhcnQgdGhlIFNvbHIgaW5kZXggdXBkYXRlIHNjcmlwdA0KIyBMYXN0IHVwZGF0ZSAyMDE3LjA3LjI3IGJ5IE5IIGZvciBjYXB0aW9ucyB0cmFuc2xhdGlvbiBpbXByb3ZlbWVudHMNCnN1ZG8geXVtIHVwZGF0ZSAteQ0Kc2h1dGRvd24gLWggbm93
-",
+  "UserData": "IyEvYmluL2Jhc2ggLXhlDQojIFNldCB1cCBhbmQgc3RhcnQgdGhlIFNvbHIgaW5kZXggdXBkYXRlIHNjcmlwdA0KIyBMYXN0IHVwZGF0ZSAyMDE3LjA3LjI3IGJ5IE5IIGZvciBjYXB0aW9ucyB0cmFuc2xhdGlvbiBpbXByb3ZlbWVudHMNCnN1ZG8geXVtIHVwZGF0ZSAteQ0Kc2h1dGRvd24gLWggbm93",
   "InstanceType": "t2.micro",
   "Placement": {
     "AvailabilityZone": "eu-west-1a"
