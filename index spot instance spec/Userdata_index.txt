@@ -2,12 +2,12 @@
 # Set up and start the Solr index update script
 # Last update 2017.07.27 by NH for captions translation improvements
 export AWS_DEFAULT_REGION=eu-west-1
-aws sns publish --topic-arn arn:aws:sns:eu-west-1:376641251557:SolrIndex --message "Solr index update started"
+# aws sns publish --topic-arn arn:aws:sns:eu-west-1:376641251557:SolrIndex --message "Solr index update started"
 sudo yum update -y
 sudo yum install -y docker
 sudo usermod -a -G docker ec2-user
 sudo service docker start
-sudo $(aws ecr get-login --region eu-west-1 --no-include-email)
+#sudo $(aws ecr get-login --region eu-west-1 --no-include-email)
 TODAY=$(date +%d%m%Y)
 YESTERDAY=$(date --date="yesterday" +%d%m%Y)
     # Production - Daily image merge and incremental
