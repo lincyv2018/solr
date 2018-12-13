@@ -1,22 +1,20 @@
 {
-  "ImageId": "ami-db1688a2",
-  "KeyName": "lincy-alamy-testaws",
-  "UserData": "IyEvYmluL2Jhc2ggLXhlDQojIFNldCB1cCBhbmQgc3RhcnQgdGhlIFNvbHIgaW5kZXggdXBkYXRlIHNjcmlwdA0KIyBMYXN0IHVwZGF0ZSAyMDE3LjA3LjI3IGJ5IE5IIGZvciBjYXB0aW9ucyB0cmFuc2xhdGlvbiBpbXByb3ZlbWVudHMNCnN1ZG8geXVtIHVwZGF0ZSAteQ0Kc2h1dGRvd24gLWggbm93",
-  "InstanceType": "t2.micro",
-  "Placement": {
-    "AvailabilityZone": "eu-west-1a"
-  },
-  "BlockDeviceMappings": [
-    {
-      "DeviceName": "/dev/xvda",
-      "Ebs": {
-        "VolumeSize": 20
-      }
-    }
-  ],
-  "SubnetId": "subnet-0cf35e7ea06fa1d29",
-  "IamInstanceProfile": {
-    "Name": "k8master_access"
-  },
-  "SecurityGroupIds": ["sg-0accdb451a0181711"]
+	"ImageId": "ami-db1688a2",
+	"KeyName": "lincy-alamy-testaws",
+	"UserData": "IyEvYmluL2Jhc2ggLXhlDQojIFNldCB1cCBhbmQgc3RhcnQgdGhlIFNvbHIgaW5kZXggdXBkYXRlIHNjcmlwdA0KIyBMYXN0IHVwZGF0ZSAyMDE3LjA3LjI3IGJ5IE5IIGZvciBjYXB0aW9ucyB0cmFuc2xhdGlvbiBpbXByb3ZlbWVudHMNCiN5dW0gdXBkYXRlIC15DQpzbGVlcCAxMA0Kc2h1dGRvd24gLWggbm93 ",
+	"InstanceType": "t2.micro",
+	"Placement": {
+		"AvailabilityZone": "eu-west-1a"
+	},
+	"BlockDeviceMappings": [{
+		"DeviceName": "/dev/xvda",
+		"Ebs": {
+			"VolumeSize": 20
+		}
+	}],
+	"SubnetId": "subnet-0cf35e7ea06fa1d29",
+	"IamInstanceProfile": {
+		"Name": "k8master_access"
+	},
+	"SecurityGroupIds": ["sg-0accdb451a0181711"]
 }
